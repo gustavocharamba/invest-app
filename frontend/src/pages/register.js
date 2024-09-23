@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container, ContentForm, Content } from "./registerStyled";
+import { api } from "../api/api"
 
 const Register = () => {
+
+    const [userData, setUserData] = useState({
+        name: "",
+        email: "",
+        password: ""
+    })
+
+    const handleChange = (event) => {
+        const {name, value} = event.target;
+
+        setUserData({
+            ...userData, [name]: value
+        })
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        // lógica de submissão do formulário de registro
+        console.log("Submitted")
+
+        api.post("/users", userData).then(
+            (response) => {
+                console.log("User registered succesfully:", response.data)
+            }
+        ).catch((error) => {console.log("Error registering user:", error)})
     };
 
     return (
@@ -13,9 +35,9 @@ const Register = () => {
             <ContentForm onSubmit={handleSubmit}>
                 <Content>
                     <h2>Register</h2>
-                    <input type="text" placeholder="Nome" required />
-                    <input type="email" placeholder="Email" required />
-                    <input type="password" placeholder="Senha" required />
+                    <input type="text" name="name" placeholder="Nome" value={userData.name} onChange={handleChange} required/>
+                    <input type="email" name="email" placeholder="Email" value={userData.email} onChange={handleChange} required />
+                    <input type="password" name="password" placeholder="Senha" value={userData.password} onChange={handleChange} required />
                     <Link to={"/"}>Already have a account?</Link>
                     <button type="submit">Registrar</button>
                 </Content>

@@ -25,17 +25,17 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly; /* Distribui o espaço igualmente entre os elementos */
+    justify-content: space-evenly;
 
     h2 {
         color: ${colors.erieBlack};
-        margin-bottom: 20px; /* Espaço abaixo do título */
+        margin-bottom: 20px;
     }
 
     input {
         width: 95%;
-        height: 40px; /* Aumenta a altura para melhor usabilidade */
-        padding: 10px; /* Ajuste do padding */
+        height: 40px;
+        padding: 10px;
         border: 2px solid ${colors.slateGray};
         border-radius: 8px;
         background-color: whitesmoke;
@@ -50,7 +50,7 @@ export const Content = styled.div`
     a {
         font-size: 14px;
         font-weight: bold;
-        text-align: center; /* Centraliza o texto */
+        text-align: center;
     }
 
     button {

@@ -17,7 +17,7 @@ export const ContentForm = styled.form`
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 `;
 
 export const Content = styled.div`
@@ -26,12 +26,12 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Para distribuir o espaço uniformemente */
+    justify-content: space-between;
 
     h2 {
         color: ${colors.erieBlack};
-        margin: 20px 0; /* Espaço acima e abaixo do título */
-        font-size: 24px; /* Tamanho do texto */
+        margin: 20px 0;
+        font-size: 24px;
     }
 
     input {
@@ -53,13 +53,13 @@ export const Content = styled.div`
         font-size: 14px;
         font-weight: bold;
         text-align: center;
-        margin: 0; /* Margem reduzida a 0 */
-        color: ${colors.erieBlack}; /* Cor do texto do link */
-        text-decoration: none; /* Remove sublinhado */
-        transition: color 0.3s; /* Efeito de transição suave */
+        margin: 0;
+        color: ${colors.erieBlack};
+        text-decoration: none;
+        transition: color 0.3s;
         
         &:hover {
-            color: ${colors.blue}; /* Cor ao passar o mouse */
+            color: ${colors.blue};
         }
     }
 
@@ -72,10 +72,10 @@ export const Content = styled.div`
         color: white;
         font-weight: bold;
         cursor: pointer;
-        transition: background-color 0.3s; /* Efeito de transição suave */
+        transition: background-color 0.3s;
 
         &:hover {
-            background-color: ${colors.onyx}; /* Cor ao passar o mouse */
+            background-color: ${colors.onyx};
         }
     }
 `;

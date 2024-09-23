@@ -25,16 +25,16 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around; /* Distribui o espaço entre os elementos */
+    justify-content: space-around; 
     
     h2 {
         color: ${colors.erieBlack};
-        margin-bottom: 20px; /* Espaço abaixo do título */
+        margin-bottom: 20px;
     }
 
     input {
         width: 95%;
-        height: 40px; /* Aumenta a altura para melhor usabilidade */
+        height: 40px; 
         padding: 10px;
         border: 2px solid ${colors.slateGray};
         border-radius: 8px;
@@ -50,8 +50,8 @@ export const Content = styled.div`
     a {
         font-size: 14px;
         font-weight: bold;
-        text-align: center; /* Centraliza o texto */
-        margin: 10px 0; /* Espaço acima e abaixo do link */
+        text-align: center;
+        margin: 10px 0;
     }
 
     button {
@@ -59,13 +59,13 @@ export const Content = styled.div`
         height: 50px;
         border-radius: 32px;
         border: 1px solid ${colors.slateGray};
-        background-color: ${colors.erieBlack}; /* Cor de fundo do botão */
-        color: white; /* Cor do texto do botão */
+        background-color: ${colors.erieBlack};
+        color: white;
         font-weight: bold;
         cursor: pointer;
 
         &:hover {
-            background-color: ${colors.onyx}; /* Cor ao passar o mouse */
+            background-color: ${colors.onyx};
         }
     }
 `;
