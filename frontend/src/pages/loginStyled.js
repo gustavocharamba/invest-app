@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const ContentForm = styled.form`
     height: 450px;
-    width: 550px;
+    width: 500px;
     border-radius: 32px;
     background-color: ${colors.frenchGray};
     display: flex;
