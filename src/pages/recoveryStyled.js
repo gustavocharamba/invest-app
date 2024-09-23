@@ -10,31 +10,33 @@ export const Container = styled.div`
 `;
 
 export const ContentForm = styled.form`
-    height: 550px;
-    width: 600px;
+    height: 350px;
+    width: 450px;
     border-radius: 32px;
     background-color: ${colors.frenchGray};
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
 `;
 
 export const Content = styled.div`
-    height: 90%;
+    height: 80%;
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around; /* Distribui o espaço entre os elementos */
-    
+    justify-content: space-between; /* Para distribuir o espaço uniformemente */
+
     h2 {
         color: ${colors.erieBlack};
-        margin-bottom: 20px; /* Espaço abaixo do título */
+        margin: 20px 0; /* Espaço acima e abaixo do título */
+        font-size: 24px; /* Tamanho do texto */
     }
 
     input {
         width: 95%;
-        height: 40px; /* Aumenta a altura para melhor usabilidade */
+        height: 40px;
         padding: 10px;
         border: 2px solid ${colors.slateGray};
         border-radius: 8px;
@@ -50,8 +52,15 @@ export const Content = styled.div`
     a {
         font-size: 14px;
         font-weight: bold;
-        text-align: center; /* Centraliza o texto */
-        margin: 10px 0; /* Espaço acima e abaixo do link */
+        text-align: center;
+        margin: 0; /* Margem reduzida a 0 */
+        color: ${colors.erieBlack}; /* Cor do texto do link */
+        text-decoration: none; /* Remove sublinhado */
+        transition: color 0.3s; /* Efeito de transição suave */
+        
+        &:hover {
+            color: ${colors.blue}; /* Cor ao passar o mouse */
+        }
     }
 
     button {
@@ -59,10 +68,11 @@ export const Content = styled.div`
         height: 50px;
         border-radius: 32px;
         border: 1px solid ${colors.slateGray};
-        background-color: ${colors.erieBlack}; /* Cor de fundo do botão */
-        color: white; /* Cor do texto do botão */
+        background-color: ${colors.erieBlack};
+        color: white;
         font-weight: bold;
         cursor: pointer;
+        transition: background-color 0.3s; /* Efeito de transição suave */
 
         &:hover {
             background-color: ${colors.onyx}; /* Cor ao passar o mouse */

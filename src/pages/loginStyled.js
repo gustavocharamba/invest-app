@@ -10,8 +10,8 @@ export const Container = styled.div`
 `;
 
 export const ContentForm = styled.form`
-    height: 60%;
-    width: 40%;
+    height: 450px;
+    width: 550px;
     border-radius: 32px;
     background-color: ${colors.frenchGray};
     display: flex;

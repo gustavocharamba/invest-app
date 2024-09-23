@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container, ContentForm, Content } from "./loginStyled"
 
 const Login = () => {
@@ -14,8 +15,8 @@ const Login = () => {
                     <h2>Login</h2>
                     <input type="email" placeholder="Email"/>
                     <input type="password" placeholder="Password"/>
-                    <a href="#">Forgot your password?</a>
-                    <a href="/register">Register</a>
+                    <Link to={"/recovery"}>Forgot your password?</Link>
+                    <Link to={"/register"}>Register</Link>
                     <button type="submit">Login</button>
                 </Content>
             </ContentForm>

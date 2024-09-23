@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container, ContentForm, Content } from "./registerStyled";
 
 const Register = () => {
@@ -16,7 +17,7 @@ const Register = () => {
                     <input type="text" placeholder="CPF" required />
                     <input type="email" placeholder="Email" required />
                     <input type="password" placeholder="Senha" required />
-                    <a href="#">Already have a account?</a>
+                    <Link to={"/"}>Already have a account?</Link>
                     <button type="submit">Registrar</button>
                 </Content>
             </ContentForm>
