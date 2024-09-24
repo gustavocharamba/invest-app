@@ -52,6 +52,10 @@ export const Content = styled.div`
         font-weight: bold;
         text-align: center;
         margin: 10px 0;
+
+        &:hover {
+            color: ${colors.onyx};
+        }
     }
 
     button {

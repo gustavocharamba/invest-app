@@ -59,7 +59,7 @@ export const Content = styled.div`
         transition: color 0.3s;
         
         &:hover {
-            color: ${colors.blue};
+            color: ${colors.onyx};
         }
     }
 
