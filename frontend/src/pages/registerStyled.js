@@ -55,6 +55,7 @@ export const Content = styled.div`
 
         &:hover {
             color: ${colors.onyx};
+            transition: 175ms;
         }
     }
 
@@ -70,6 +71,7 @@ export const Content = styled.div`
 
         &:hover {
             background-color: ${colors.onyx};
+            transition: 175ms;
         }
     }
 `;
