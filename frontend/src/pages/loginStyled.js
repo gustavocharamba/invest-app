@@ -13,7 +13,7 @@ export const ContentForm = styled.form`
     height: 450px;
     width: 500px;
     border-radius: 32px;
-    background-color: ${colors.frenchGray};
+    background-color: ${colors.ashGray};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +28,7 @@ export const Content = styled.div`
     justify-content: space-evenly;
 
     h2 {
-        color: ${colors.erieBlack};
+        color: ${colors.deepBlack};
         margin-bottom: 20px;
     }
 
@@ -42,7 +42,7 @@ export const Content = styled.div`
         font-size: 16px;
         
         &:focus {
-            border-color: ${colors.erieBlack};
+            border-color: ${colors.deepBlack};
             outline: none;
         }
     }
@@ -51,6 +51,7 @@ export const Content = styled.div`
         font-size: 14px;
         font-weight: bold;
         text-align: center;
+        color: ${colors.stormGray};
 
         &:hover {
             color: ${colors.onyx};
@@ -63,7 +64,7 @@ export const Content = styled.div`
         height: 50px;
         border-radius: 32px;
         border: 1px solid ${colors.slateGray};
-        background-color: ${colors.erieBlack};
+        background-color: ${colors.outerSpace};
         color: white;
         font-weight: bold;
         cursor: pointer;

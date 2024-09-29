@@ -13,7 +13,7 @@ export const ContentForm = styled.form`
     height: 350px;
     width: 450px;
     border-radius: 32px;
-    background-color: ${colors.frenchGray};
+    background-color: ${colors.ashGray};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +44,7 @@ export const Content = styled.div`
         font-size: 16px;
 
         &:focus {
-            border-color: ${colors.erieBlack};
+            border-color: ${colors.deepBlack};
             outline: none;
         }
     }
@@ -53,13 +53,11 @@ export const Content = styled.div`
         font-size: 14px;
         font-weight: bold;
         text-align: center;
-        margin: 0;
-        color: ${colors.erieBlack};
-        text-decoration: none;
-        transition: color 0.3s;
-        
+        margin: 10px 0;
+        color: ${colors.stormGray};
+
         &:hover {
-            color: ${colors.onyx};
+            color: ${colors.deepBlack};
             transition: 175ms;
         }
     }
@@ -69,7 +67,7 @@ export const Content = styled.div`
         height: 50px;
         border-radius: 32px;
         border: 1px solid ${colors.slateGray};
-        background-color: ${colors.erieBlack};
+        background-color: ${colors.outerSpace};
         color: white;
         font-weight: bold;
         cursor: pointer;

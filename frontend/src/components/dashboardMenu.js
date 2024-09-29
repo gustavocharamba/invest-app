@@ -12,24 +12,34 @@ const DashboardMenu = () => {
     return (
         <MenuContainer>
             <MenuItem>
-                <RxDashboard/>
-                <Link to="/dashboard">Dashboard</Link>
+                <div>
+                    <RxDashboard/>
+                    <Link to="/dashboard">Dashboard</Link>
+                </div>
             </MenuItem>
             <MenuItem>
-                <TbBrandGoogleAnalytics/>
-                <Link to="/analytics">Analytics</Link>
+                <div>
+                    <TbBrandGoogleAnalytics/>
+                    <Link to="/analytics">Analytics</Link>
+                </div>
             </MenuItem>
             <MenuItem>
-                <PiWalletThin/>
-                <Link to="/wallet">Wallet</Link>
+                <div>
+                    <PiWalletThin/>
+                    <Link to="/wallet">Wallet</Link>
+                </div>
             </MenuItem>
             <MenuItem>
-                <TbReceiptBitcoin/>
-                <Link to="/crypto">Crypto</Link>
+                <div>
+                    <TbReceiptBitcoin/>
+                    <Link to="/crypto">Crypto</Link>
+                </div>
             </MenuItem>
             <MenuItem>
-                <RiStockLine/>
-                <Link to="/stocks">Stocks</Link>
+                <div>
+                    <RiStockLine/>
+                    <Link to="/stocks">Stocks</Link>
+                </div>
             </MenuItem>
         </MenuContainer>
     );

@@ -13,7 +13,7 @@ const Recovery = () => {
                 <Content>
                     <h2>Recovery</h2>
                     <input type="email" placeholder="Email" required />
-                    <Link to={"/"}>Login</Link>
+                    <Link to={"/"}>Remembered Password?</Link>
                     <button type="submit">Send</button>
                 </Content>
             </ContentForm>
