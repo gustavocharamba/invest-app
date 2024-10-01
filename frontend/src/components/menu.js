@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MenuContainer, MenuItem } from "./dashboardMenuStyled";
+import { MenuContainer, MenuItem } from "./menuStyled";
 
 import { RxDashboard } from "react-icons/rx";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
@@ -8,7 +8,7 @@ import { PiWalletThin } from "react-icons/pi";
 import { TbReceiptBitcoin } from "react-icons/tb";
 import { RiStockLine } from "react-icons/ri";
 
-const DashboardMenu = () => {
+const Menu = () => {
     return (
         <MenuContainer>
             <MenuItem>
@@ -45,4 +45,4 @@ const DashboardMenu = () => {
     );
 };
 
-export default DashboardMenu;
+export default Menu;

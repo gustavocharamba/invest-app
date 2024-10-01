@@ -1,20 +1,21 @@
-import React, { useEffect } from "react";
-import { Container } from "./dasboardStyled"
+import React from "react";
+import { Container } from "./dashboardStyled"
 
-import DashboardMenu from "../components/dashboardMenu";
-import DashboardContent from "../components/dashboardContent";
+import Menu from "../components/menu";
+import Main from "../components/dashboard/main";
 
 
 
 const Dashboard = () => {
+    
     return(
         <Container>
-            <DashboardMenu>
+            <Menu>
                 
-            </DashboardMenu>
-            <DashboardContent>
-                
-            </DashboardContent>
+            </Menu>
+            <Main>
+
+            </Main>
         </Container>
     )
 }

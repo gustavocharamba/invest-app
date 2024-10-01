@@ -3,7 +3,7 @@ import { colors } from "../global/globalColors"
 
 export const MenuContainer = styled.div`
     height: 100%;
-    width: 8%;
+    width: 250px;
     color: whitesmoke;
 
     display: flex;

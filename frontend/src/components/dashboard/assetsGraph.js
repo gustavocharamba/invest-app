@@ -5,7 +5,7 @@ import { Container } from "./assetsGraphStyled";
 const AssetsGraph = () => {
     return(
         <Container>
-            <div></div>
+            Total Investment
         </Container>
     )
 }

@@ -5,9 +5,7 @@ import { Container } from "./topGainsStyled"
 const TopGains = () => {
     return(
         <Container>
-            <div>
-                
-            </div>
+            Top Week Gains
         </Container>
     )
 }

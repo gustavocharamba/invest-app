@@ -1,15 +1,15 @@
 import React from "react";
 
-import { ContentContainer, HeaderContainer, BodyContainer} from "./dashboardContentStyled";
+import { MainContainer, HeaderContainer, BodyContainer} from "./mainStyled";
 import TotalAssets from "./totalAssets"
 import AssetsGraph from "./assetsGraph";
 import MonthProfit from "./monthProfit";
 import TopGains from "./topGains";
 
 
-const DashboardContent = () => {
+const Main = () => {
     return(
-        <ContentContainer>
+        <MainContainer>
             <HeaderContainer>
                 <div>
                     <h2>Dashboard</h2>
@@ -19,13 +19,13 @@ const DashboardContent = () => {
                 </div>
             </HeaderContainer>
             <BodyContainer>
-                <TotalAssets/>
-                <AssetsGraph/>
-                <MonthProfit/>
-                <TopGains/>
+                <TotalAssets></TotalAssets>
+                <AssetsGraph></AssetsGraph>
+                <MonthProfit></MonthProfit>
+                <TopGains></TopGains>
             </BodyContainer>
-        </ContentContainer>
+        </MainContainer>
     )
 }
 
-export default DashboardContent
+export default Main

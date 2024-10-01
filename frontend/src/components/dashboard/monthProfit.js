@@ -5,9 +5,8 @@ import { Container } from "./monthProfitStyled"
 const MonthProfit = () => {
     return(
         <Container>
-            <div>
+            Profit per Month
 
-            </div>
         </Container>
     )
 }

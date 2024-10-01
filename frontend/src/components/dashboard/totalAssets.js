@@ -4,7 +4,7 @@ import { Container } from "./totalAssetsStyled";
 const TotalAssets = () => {
     return(
         <Container>
-            <div></div>
+            Total Assets
         </Container>
     )
 }
