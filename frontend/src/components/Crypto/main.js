@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
 import { MainContainer, HeaderContainer, BodyContainer, CryptoTableWrapper, 
-     TableRow, TableCell, HeaderRow, HeaderCell, CryptoTable, LoadingContainer } from "./mainStyled";
+     TableRow, TableCell, HeaderRow, HeaderCell, CryptoTable, LoadingContainer, TableBody } from "./mainStyled";
 
-import Modal from "./modal";
+import Modal from "./modal"
 
 const Main = () => {
     const [cryptos, setCryptos] = useState([]);
@@ -85,16 +84,18 @@ const Main = () => {
                   <HeaderCell>Market Cap</HeaderCell>
                   <HeaderCell>Volume (24h)</HeaderCell>
                 </HeaderRow>
-                {cryptos.map((crypto) => (
-                  <TableRow key={crypto.uuid} onClick={() => handleRowClick(crypto)}>
-                    <TableCell>{crypto.symbol}</TableCell>
-                    <TableCell>{crypto.name}</TableCell>
-                    <TableCell>${parseFloat(crypto.price).toFixed(2)}</TableCell>
-                    <TableCell>{crypto.change}%</TableCell>
-                    <TableCell>${parseFloat(crypto.marketCap).toLocaleString()}</TableCell>
-                    <TableCell>${parseFloat(crypto["24hVolume"]).toLocaleString()}</TableCell>
-                  </TableRow>
-                ))}
+                <TableBody>
+                  {cryptos.map((crypto) => (
+                    <TableRow key={crypto.uuid} onClick={() => handleRowClick(crypto)}>
+                      <TableCell>{crypto.symbol}</TableCell>
+                      <TableCell>{crypto.name}</TableCell>
+                      <TableCell>${parseFloat(crypto.price).toFixed(2)}</TableCell>
+                      <TableCell>{crypto.change}%</TableCell>
+                      <TableCell>${parseFloat(crypto.marketCap).toLocaleString()}</TableCell>
+                      <TableCell>${parseFloat(crypto["24hVolume"]).toLocaleString()}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
               </CryptoTable>
             </CryptoTableWrapper>
           )}

@@ -2,12 +2,14 @@ import styled from "styled-components";
 import { colors } from "../../global/globalColors";
 
 export const MainContainer = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100%;
   border-radius: 24px;
   color: whitesmoke;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 `;
 
 export const HeaderContainer = styled.div`
@@ -49,15 +51,17 @@ export const BodyContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 
 export const CryptoTableWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: calc(100% - 40px);
-  max-height: calc(100% - 40px);
+  height: calc(100% - 40px);
   border: 1px solid ${colors.onyx};
   border-radius: 12px;
+  overflow: hidden;
 `;
 
 export const HeaderRow = styled.div`
@@ -79,7 +83,15 @@ export const HeaderCell = styled.div`
 `;
 
 export const CryptoTable = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+`;
+
+export const TableBody = styled.div`
   overflow-y: auto;
+  flex-grow: 1;
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -123,12 +135,12 @@ export const TableCell = styled.div`
 `;
 
 export const LoadingContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  background-color: ${colors.deepBlack};
-  color: ${colors.outerSpace};
-  font-size: 24px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+width: 100%;
+background-color: ${colors.raisinBlack};
+color: ${colors.blueJeans};
+font-size: 24px;
 `;
