@@ -1,113 +1,108 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios"
-
+import axios from "axios";
 
 import { MainContainer, HeaderContainer, BodyContainer, CryptoTableWrapper, 
-     TableRow, TableCell, HeaderRow, HeaderCell, CryptoTable } from "./mainStyled"
+     TableRow, TableCell, HeaderRow, HeaderCell, CryptoTable, LoadingContainer } from "./mainStyled";
+
+import Modal from "./modal";
 
 const Main = () => {
-
-    // const [ cryptos, setCryptos ] = useState([])
-    // const [ loading, setLoading ] = useState(true)
-    // const [error, setError] = useState(null);
-
-    // useEffect(() => {
-    //     const getCryptos = async () => {
-    //         const options = {
-    //             method: 'GET',
-    //             url: 'https://real-time-finance-data.p.rapidapi.com/market-trends',
-    //             params: {
-    //                 trend_type: 'CRYPTO',
-    //                 country: 'us',
-    //                 language: 'en'
-    //             },
-    //             headers: {
-    //                 'x-rapidapi-key': 'e2a99c8790msh90aed4d017ed0b2p129056jsna141f90f1eda',
-    //                 'x-rapidapi-host': 'real-time-finance-data.p.rapidapi.com'
-    //             }
-    //         };
-            
-    //         try {
-    //             const response = await axios.request(options);
-    //             const trends = response.data.data.trends; // Accessing the trends data
-    //             setCryptos(trends); // Updating the state with the data
-    //         } catch (error) {
-    //             setError('Failed to fetch data'); // Setting error state
-    //         } finally {
-    //             setLoading(false); // Marking loading as finished
-    //         }
-    //     };
-
-    //     getCryptos(); // Call the function to fetch data when the component mounts
-    // }, []); // Empty dependency array to run the effect once on mount
-    // console.log(cryptos)
-    // if (loading) return <p>Loading...</p>;
-    // if (error) return <p>{error}</p>;
-
-    return(
-        <MainContainer>
-            <HeaderContainer>
-            <div>
-                    <h2>Crypto</h2>
-                </div>
-                <div>
-                    <a>Account</a>
-                </div>
-            </HeaderContainer>
-            <BodyContainer>
-                {/* <CryptoTableWrapper>
-                    <TableHeader>
-                        <TableRow>
-                            <TableCell>Name</TableCell>
-                            <TableCell>Price</TableCell>
-                            <TableCell>1h %</TableCell>
-                            <TableCell>24h %</TableCell>
-                            <TableCell>7d %</TableCell>
-                            <TableCell>Market Cap</TableCell>
-                            <TableCell>Volume (24h)</TableCell>
-                        </TableRow>
-                    </TableHeader>
-
-                    {cryptos.map((crypto, index) => (
-                        <TableRow key={index}>
-                            <TableCell>{crypto.name}</TableCell>
-                            <TableCell>${crypto.price}</TableCell>
-                            <TableCell>{crypto.change_1h}%</TableCell>
-                            <TableCell>{crypto.change_24h}%</TableCell>
-                            <TableCell>{crypto.change_7d}%</TableCell>
-                            <TableCell>${crypto.market_cap}</TableCell>
-                            <TableCell>${crypto.volume_24h}</TableCell>
-                        </TableRow>
-                    ))}
-                    </CryptoTableWrapper> */}
-
-                    <CryptoTableWrapper>
-                        <HeaderRow>
-                            <HeaderCell>Name</HeaderCell>
-                            <HeaderCell>Price</HeaderCell>
-                            <HeaderCell>1h %</HeaderCell>
-                            <HeaderCell>24h %</HeaderCell>
-                            <HeaderCell>7d %</HeaderCell>
-                            <HeaderCell>Market Cap</HeaderCell>
-                            <HeaderCell>Volume (24h)</HeaderCell>
-                        </HeaderRow>
-                        <CryptoTable>
-                            {Array.from({length: 80}).map((_, index) => (
-                                <TableRow key={index}>
-                                    <TableCell>Bitcoin</TableCell>
-                                    <TableCell>$70000</TableCell>
-                                    <TableCell>0.17%</TableCell>
-                                    <TableCell>0.5%</TableCell>
-                                    <TableCell>12%</TableCell>
-                                    <TableCell>$1.000.000.000.000</TableCell>
-                                    <TableCell>$1.000.000.000.000</TableCell>
-                            </TableRow>
-                            ))}
-                        </CryptoTable>
-                    </CryptoTableWrapper>
-            </BodyContainer>
-        </MainContainer>
-    )
-}
-
-export default Main
+    const [cryptos, setCryptos] = useState([]);
+    const [error, setError] = useState(null);
+    const [selectedCrypto, setSelectedCrypto] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+  
+    useEffect(() => {
+      const getCryptos = async () => {
+        const options = {
+          method: 'GET',
+          url: 'https://coinranking1.p.rapidapi.com/coins',
+          params: {
+            referenceCurrencyUuid: '5k-_VTxqtCEI',
+            timePeriod: '3h',
+            tiers: '1',
+            orderBy: 'marketCap',
+            orderDirection: 'desc',
+            limit: '50',
+          },
+          headers: {
+            'x-rapidapi-key': 'e2a99c8790msh90aed4d017ed0b2p129056jsna141f90f1eda',
+            'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
+          },
+        };
+  
+        try {
+          const response = await axios.request(options);
+          setCryptos(response.data.data.coins);
+        } catch (error) {
+          console.error(error);
+          setError("Failed to fetch cryptocurrencies. Please try again.");
+        } finally {
+          setIsLoading(false);
+        }
+      };
+  
+      getCryptos();
+    }, []);
+  
+    const handleRowClick = (crypto) => {
+      setSelectedCrypto(crypto);
+      setIsModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+      setSelectedCrypto(null);
+    };
+  
+    if (isLoading) {
+      return <LoadingContainer>Loading...</LoadingContainer>;
+    }
+  
+    return (
+      <MainContainer>
+        <HeaderContainer>
+          <div>
+            <h2>Crypto</h2>
+          </div>
+          <div>
+            <a href="#">Account</a>
+          </div>
+        </HeaderContainer>
+  
+        <BodyContainer>
+          {error ? (
+            <p>{error}</p>
+          ) : (
+            <CryptoTableWrapper>
+              <CryptoTable>
+                <HeaderRow>
+                  <HeaderCell>Symbol</HeaderCell>
+                  <HeaderCell>Name</HeaderCell>
+                  <HeaderCell>Price</HeaderCell>
+                  <HeaderCell>1h %</HeaderCell>
+                  <HeaderCell>Market Cap</HeaderCell>
+                  <HeaderCell>Volume (24h)</HeaderCell>
+                </HeaderRow>
+                {cryptos.map((crypto) => (
+                  <TableRow key={crypto.uuid} onClick={() => handleRowClick(crypto)}>
+                    <TableCell>{crypto.symbol}</TableCell>
+                    <TableCell>{crypto.name}</TableCell>
+                    <TableCell>${parseFloat(crypto.price).toFixed(2)}</TableCell>
+                    <TableCell>{crypto.change}%</TableCell>
+                    <TableCell>${parseFloat(crypto.marketCap).toLocaleString()}</TableCell>
+                    <TableCell>${parseFloat(crypto["24hVolume"]).toLocaleString()}</TableCell>
+                  </TableRow>
+                ))}
+              </CryptoTable>
+            </CryptoTableWrapper>
+          )}
+        </BodyContainer>
+  
+        <Modal isOpen={isModalOpen} onClose={closeModal} crypto={selectedCrypto} />
+      </MainContainer>
+    );
+  };
+  
+  export default Main;

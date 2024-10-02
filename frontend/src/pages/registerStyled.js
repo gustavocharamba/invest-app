@@ -7,13 +7,14 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: ${colors.deepBlack};
 `;
 
 export const ContentForm = styled.form`
     height: 500px;
     width: 550px;
     border-radius: 32px;
-    background-color: ${colors.ashGray};
+    background-color: ${colors.slateGray};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,10 +53,10 @@ export const Content = styled.div`
         font-weight: bold;
         text-align: center;
         margin: 10px 0;
-        color: ${colors.stormGray};
+        color: ${colors.deepBlack};
 
         &:hover {
-            color: ${colors.deepBlack};
+            color: ${colors.outerSpace};
             transition: 175ms;
         }
     }
@@ -64,8 +65,8 @@ export const Content = styled.div`
         width: 150px;
         height: 50px;
         border-radius: 32px;
-        border: 1px solid ${colors.slateGray};
-        background-color: ${colors.outerSpace};
+        border: 0;
+        background-color: ${colors.deepBlack};
         color: white;
         font-weight: bold;
         cursor: pointer;

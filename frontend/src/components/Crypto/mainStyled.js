@@ -7,7 +7,6 @@ export const MainContainer = styled.div`
   border-radius: 24px;
   color: whitesmoke;
   overflow: hidden;
-  background-color: ${colors.raisinBlack}; // Assuming this is your background color
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
@@ -64,7 +63,7 @@ export const CryptoTableWrapper = styled.div`
 export const HeaderRow = styled.div`
   display: grid;
   width: 100%;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 2fr 2fr;
   background-color: ${colors.outerSpace};
   color: white;
   font-weight: bold;
@@ -77,44 +76,59 @@ export const HeaderCell = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 export const CryptoTable = styled.div`
   overflow-y: auto;
-  
-    &::-webkit-scrollbar {
+
+  &::-webkit-scrollbar {
     width: 8px;
   }
-  
+
   &::-webkit-scrollbar-track {
     background: ${colors.raisinBlack};
   }
-  
+
   &::-webkit-scrollbar-thumb {
     background-color: ${colors.onyx};
     border-radius: 4px;
   }
-`
+`;
 
 export const TableRow = styled.div`
   display: grid;
   width: 100%;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 2fr 2fr;
   color: white;
   font-weight: bold;
   transition: background-color 0.3s ease;
   border-bottom: 1px solid ${colors.onyx};
+  cursor: pointer;
 
   &:last-child {
     border-bottom: none;
   }
+
+  &:hover {
+    background-color: ${colors.outerSpace};
+  }
 `;
 
 export const TableCell = styled.div`
-    height: 60px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 60px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
+export const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: ${colors.deepBlack};
+  color: ${colors.outerSpace};
+  font-size: 24px;
 `;

@@ -35,12 +35,6 @@ const Menu = () => {
                     <Link to="/crypto">Crypto</Link>
                 </div>
             </MenuItem>
-            <MenuItem>
-                <div>
-                    <RiStockLine/>
-                    <Link to="/stocks">Stocks</Link>
-                </div>
-            </MenuItem>
         </MenuContainer>
     );
 };
